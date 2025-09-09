@@ -5,6 +5,7 @@ nm = nmap.PortScanner()
 target = "45.33.32.156"
 options = "-sV -sC scan_results"
 
+
 nm.scan(target, arguments=options)
 
 for host in nm.all_hosts():
@@ -15,3 +16,4 @@ for host in nm.all_hosts():
         port_info = nm[host][protocol]
         for port, state in port_info.items():
             print("Port: %s\tState: %s" % (port, state))
+
